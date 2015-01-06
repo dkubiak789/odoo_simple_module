@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="simple_model_view_form" model="ir.ui.view">
+            <field name="name">simple.model.view.form</field>
+            <field name="model">simple.model</field>
+            <field name="arch" type="xml">
+                <form string="Simple Model" version="7.0">
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                </form>
+            </field>
+        </record>
+
+        <record id="simple_model_view_tree" model="ir.ui.view">
+            <field name="name">simple.model.view.tree</field>
+            <field name="model">simple.model</field>
+            <field name="arch" type="xml">
+                <tree string="Simple Model">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_simple_model" model="ir.actions.act_window">
+            <field name="name">Simple Model Window Action</field>
+            <field name="res_model">simple.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Example" id="menu_simple_model" groups="base.group_user" sequence="200"/>
+        <menuitem name="Simple Menu Group" id="menu_simple_model_group" parent="menu_simple_model" sequence="100"/>
+        <menuitem name="Simple Menu Item" id="menu_simple_model_item" parent="menu_simple_model_group" sequence="120"/>
+
+    </data>
+</openerp>
